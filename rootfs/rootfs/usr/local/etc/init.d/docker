@@ -106,6 +106,8 @@ start() {
     echo "------------------------" >> "$DOCKER_LOGFILE"
     echo "/usr/local/bin/dockerd -g \"$DOCKER_DIR\" -H unix:// $DOCKER_HOST $EXTRA_ARGS >> \"$DOCKER_LOGFILE\"" >> "$DOCKER_LOGFILE"
     /usr/local/bin/dockerd -g "$DOCKER_DIR" -H unix:// $DOCKER_HOST $EXTRA_ARGS >> "$DOCKER_LOGFILE" 2>&1 &
+
+    echo "=====> DOCKER DAEMON STARTED: $(date)" >> "$DOCKER_LOGFILE"
 }
 
 stop() {
